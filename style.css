@@ -1,6 +1,4 @@
-ul {
-  list-style-type: none;
-}
+/*links*/
 
 a:visited {
   text-decoration: none;
@@ -8,24 +6,18 @@ a:visited {
 }
 
 a {
-  color: black;
   text-decoration: none;
+  display: block;
 }
 
-nav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #012033;
-  overflow-x: hidden;
-  padding-top: 20px;
+a.active {
+  background-color: #5e75d1;
+  color: white;
 }
 
 nav a {
-  padding: 6px 8px 6px 16px;
+  border-radius: 50px;
+  padding: 25px 2px 25px 10px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -36,8 +28,92 @@ nav a:hover {
   color: aliceblue;
 }
 
+nav a:hover:not(.active) {
+  background-color: #545d80;
+  color: white;
+}
+
+/*header content*/
+
+.Opening {
+  margin-left: 500px;
+  background-color: #1d39a8;
+  padding: 20px 20px 20px 20px;
+  text-shadow: 2px 2px 4px #ead9d9;
+  border-radius: 50px;
+}
+
+#newz {
+  float: right;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.Onewz {
+  display: inline-block;
+}
+
+#welcome {
+  margin-right: 5px;
+}
+
+.city {
+  margin-left: 20px;
+}
+
+/* new zealand animation*/
+
+.Opening,
+#newz::after {
+  animation-delay: 0;
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: 1;
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: 800ms;
+  animation-duration: var(--duration, 800ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.Opening {
+  position: relative;
+  font-size: 2vw;
+  animation-name: text;
+  color: #fff;
+  white-space: nowrap;
+  cursor: default;
+  text-transform: uppercase;
+}
+
+:root {
+  --animation-delay: 0;
+  --duration: 800ms;
+  --iterations: 1;
+}
+
+.Opening::after {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/*body content*/
+
 body {
-  opacity: 0.8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-left: 200px;
   padding: 0px 10px;
   background-attachment: scroll;
@@ -46,11 +122,258 @@ body {
   background-image: url(new-zealand-mountain.jpg);
 }
 
-@media screen and (max-height: 450px) {
-  nav {
-    padding-top: 15px;
-  }
-  nav a {
-    font-size: 18px;
-  }
+h4 {
+  text-shadow: 2px 2px 4px #231e1e;
+  color: #012033;
+}
+
+h3 {
+  margin-right: 20px;
+  color: #0c4b72;
+  text-align: center;
+  font-size: 30px;
+}
+
+#geo {
+  float: left;
+  width: 40%;
+  padding-left: 50px;
+}
+#cul {
+  float: right;
+  width: 40%;
+  padding-right: 50px;
+}
+
+#pop {
+  width: 40%;
+  padding-left: 400px;
+  padding-bottom: 50px;
+}
+
+#eco {
+  float: right;
+  width: 40%;
+  padding-right: 50px;
+}
+
+.intro {
+  padding-bottom: 60px;
+}
+
+#info2 {
+  padding: 40px 140px 100px 40px;
+}
+
+#plz {
+  background-color: #ead9d96a;
+}
+
+#introall {
+  text-align: center;
+}
+
+/*form - body*/
+
+form {
+  text-align: center;
+}
+
+.formbuttons {
+  font-size: 40px;
+}
+
+#form {
+  border-radius: 5px;
+  background-color: #ead9d96a;
+  padding: 20px;
+}
+
+input,
+select {
+  opacity: 0.8;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  opacity: 0.8;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 250px;
+  height: 100px;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #83bfe5;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #50a9e0;
+}
+
+.reset {
+  opacity: 0.8;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 17px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+button {
+  width: 100%;
+  background-color: #83bfe5;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #50a9e0;
+}
+
+/*footer*/
+
+footer {
+  text-align: center;
+}
+
+.github {
+  display: inline;
+  text-align: center;
+  padding-left: 135px;
+}
+
+.footerL {
+  width: 150px;
+  margin-left: 500px;
+  border-radius: 20px;
+}
+
+/*footer buttons*/
+
+.button {
+  padding-bottom: 30px;
+  height: 20px;
+  width: 300px;
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(121, 176, 234, 0.2) 0 -25px 18px -14px inset,
+    rgba(121, 176, 234, 0.2) 0 1px 2px, rgba(121, 176, 234, 0.2) 0 2px 4px,
+    rgba(121, 176, 234, 0.2) 0 4px 8px, rgba(121, 176, 234, 0.2) 0 8px 16px,
+    rgba(121, 176, 234, 0.2) 0 16px 32px;
+  color: rgb(37, 131, 162);
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.button:hover {
+  box-shadow: rgba(83, 152, 226, 0.2) 0 -25px 18px -14px inset,
+    rgba(83, 152, 226, 0.2) 0 1px 2px, rgba(83, 152, 226, 0.2) 0 2px 4px,
+    rgba(83, 152, 226, 0.2) 0 4px 8px, rgba(83, 152, 226, 0.2) 0 8px 16px,
+    rgba(83, 152, 226, 0.2) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/*sidebar*/
+
+nav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(#83bfe5, #012033);
+  overflow-x: hidden;
+  padding-top: 20px;
+  opacity: 0.8;
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  padding: 30px 0;
+}
+
+.sideP {
+  margin-top: 370px;
+  margin-left: 30px;
+}
+
+/*cities table*/
+
+.table-wrapper {
+  margin: 10px 70px 25px;
+  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: rgba(255, 255, 255, 0.632);
+}
+
+.table td,
+.table th {
+  text-align: center;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.table td {
+  border-right: 1px solid #f8f8f881;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.table thead th {
+  color: #ffffff;
+  background: #83bfe5;
+}
+
+.colors {
+  background: #f8f8f8ba;
+}
+
+/*videos*/
+
+video {
+  width: 33%;
 }
