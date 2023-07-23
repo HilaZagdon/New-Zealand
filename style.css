@@ -370,6 +370,20 @@ h2 {
   background: #83bfe5;
 }
 
+.tdnum {
+  color: #5f5b5b;
+}
+
+.citywiki {
+  text-decoration: none;
+}
+
+.citywiki:hover {
+  transform: 1s;
+  transition: 0.3s;
+  scale: 1.4;
+}
+
 .colors {
   background: #f8f8f8ba;
 }
